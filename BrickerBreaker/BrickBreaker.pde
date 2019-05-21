@@ -11,7 +11,7 @@ interface Moveable{
 abstract class Thing implements Displayable{
   float x,y;
 }
-class Ball extends Thing {
+class Ball extends Thing implements Moveable {
   float x = 300;
   float y = 300;
   float Xspeed,Yspeed;
@@ -19,6 +19,14 @@ class Ball extends Thing {
     fill(255, 204, 0);
     noStroke();
     ellipse(x,y,30,30);
+  }
+  void move(){
+   Yspeed = 1;
+   if(y >= 550){
+     Xspeed = 1;
+  }
+  x += Xspeed;
+  y += Yspeed;
   }
 }
   
@@ -59,6 +67,7 @@ void setup() {
     Ball a = new Ball();
     thingsToDisplay.add(b);
     thingsToDisplay.add(a);
+    thingsToMove.add(a);
     thingsToMove.add(b);
 }
 void draw() {
