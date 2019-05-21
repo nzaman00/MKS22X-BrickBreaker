@@ -11,19 +11,30 @@ interface Moveable{
 abstract class Thing implements Displayable{
   float x,y;
 }
+class Ball extends Thing {
+  float x = 300;
+  float y = 300;
+  float Xspeed,Yspeed;
+  void display(){
+    fill(255, 204, 0);
+    noStroke();
+    ellipse(x,y,30,30);
+  }
+}
   
 
 class Platform extends Thing implements Moveable {
   
   float y = 550;
   float x = mouseX;
-  void setup() {
-    size(400, 200);
-    noStroke();
-  }
+ // void setup() {
+ //   size(400, 200);
+  //  noStroke();
+ // }
 
   void display() {
-    background(126);
+    background(0);
+    fill(209);
     rect(x, y, 150, 33);
   
   }
@@ -45,7 +56,9 @@ void setup() {
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
     Platform b = new Platform();
+    Ball a = new Ball();
     thingsToDisplay.add(b);
+    thingsToDisplay.add(a);
     thingsToMove.add(b);
 }
 void draw() {
