@@ -1,7 +1,7 @@
 class Ball extends Thing implements Moveable, Collideable {
   float x = 300;
   float y = 300;
-  float Yspeed = random(1,5);
+  float Yspeed = random(3,5);
   float Xspeed = random(-5,5);
   void display(){
     fill(255, 204, 0);
@@ -30,8 +30,15 @@ class Ball extends Thing implements Moveable, Collideable {
   void dealWCollision(Thing other){
     if(other instanceof Platform){
       Platform plat = (Platform) other;
-      if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+30 >= plat.y){
+      if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+15 >= plat.y && this.y+15 <= plat.y+15){
         Yspeed *= -1;
+        println("Collision");
+      }else{
+      if( this.y+15 >= plat.y && this.y+15 <= plat.y+15 && this.x+15>=plat.x&& this.x-15<= plat.x+plat.wd){
+       y= y-5;
+       Yspeed *= -1;
+       println("bounce");
+      }
       }
     }
   }
