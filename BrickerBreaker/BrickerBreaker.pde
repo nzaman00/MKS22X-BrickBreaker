@@ -41,4 +41,7 @@ void draw() {
   for (Moveable thing : thingsToMove) {
     thing.move();
   }
+  textSize(32);
+  text(str(a.y), 0,40);
+  fill(255);
 }
