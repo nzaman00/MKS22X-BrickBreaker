@@ -18,19 +18,19 @@ abstract class Thing implements Displayable{
 //platform
 ArrayList<Displayable> thingsToDisplay;
 ArrayList<Moveable> thingsToMove;
- Ball a;
- Platform b;
+ Ball b;
+ Platform p;
 void setup() {
   size(600, 600);
 
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
-    b = new Platform();
-    a = new Ball();
+    p = new Platform();
+    b = new Ball();
+    thingsToDisplay.add(p);
     thingsToDisplay.add(b);
-    thingsToDisplay.add(a);
-    thingsToMove.add(a);
     thingsToMove.add(b);
+    thingsToMove.add(p);
 }
 void draw() {
   background(255);
@@ -42,6 +42,6 @@ void draw() {
     thing.move();
   }
   textSize(32);
-  text(str(a.y), 0,40);
+  text(str(b.y), 0,40);
   fill(255);
 }
