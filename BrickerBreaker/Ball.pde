@@ -25,21 +25,45 @@ class Ball extends Thing implements Moveable, Collideable {
   
   x += Xspeed;
   y += Yspeed;
-  dealWCollision(b);
+  dealWCollision(p);
+ // distFrmCtr(p);
   }
   void dealWCollision(Thing other){
     if(other instanceof Platform){
       Platform plat = (Platform) other;
       if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+15 >= plat.y && this.y+15 <= plat.y+15){
         Yspeed *= -1;
+        //fix this!!!
+        if(this.x == plat.x+75 || this.x+50 == plat.x+75 || this.x-50 == plat.x+75){
+         Xspeed *= .5;
+         println("steadied");
+       }
         println("Collision");
       }else{
       if( this.y+15 >= plat.y && this.y+15 <= plat.y+15 && this.x+15>=plat.x&& this.x-15<= plat.x+plat.wd){
        y= y-5;
        Yspeed *= -1;
+       if(this.x+15==plat.x || this.x-15 ==plat.x){
+        Xspeed *= 1.5; 
+        println("wild");
+       }
        println("bounce");
       }
       }
     }
   }
+  //void distFrmCtr(Thing other){
+    
+   // if(other instanceof Platform){
+     // Platform plat = (Platform) other;
+     // if(this.x == plat.x+75){
+       // Xspeed = 0;
+      //}
+     // if(plat.x+75
+      
+   // }
+    
+    
+ // }
+  
 }
