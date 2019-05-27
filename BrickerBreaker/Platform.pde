@@ -1,4 +1,4 @@
-`class Platform extends Thing implements Moveable {
+class Platform extends Thing implements Moveable {
   float ht= 33;
   float wd = 150;
   float y = 550;
