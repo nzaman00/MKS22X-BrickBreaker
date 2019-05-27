@@ -9,3 +9,5 @@ Got the ball class to bounce off the platform when they collide
 Fixed ball class to bounce when hit diagonally by the platform, but it does not move realistically. Fixed the bug where the ball keeps bouncing even after it falls off.
 ## 5/24:
 Fixed the ball class so that the Xspeed of the ball changes depending on where the ball hits the platform. The closer to the middle, the steadier it moves.
+## 5/27:
+Made brick class constructor, but it does not collide yet. I changed the background temporarily to white so it's easier to see the bricks while I test everything
