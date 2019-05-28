@@ -26,6 +26,11 @@ class Ball extends Thing implements Moveable, Collideable {
   x += Xspeed;
   y += Yspeed;
   dealWCollision(p);
+  dealWCollision(a);
+  dealWCollision(c);
+  dealWCollision(d);
+  dealWCollision(e);
+  dealWCollision(f);
  // distFrmCtr(p);
   }
   void dealWCollision(Thing other){
@@ -50,6 +55,12 @@ class Ball extends Thing implements Moveable, Collideable {
        println("bounce");
       }
       }
+    }
+    if(other instanceof Bricks){
+     Bricks Brick = (Bricks) other;
+     if(this.y-15 <= Brick.y+25&& this.y-15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
+       Yspeed *= -1;
+    }
     }
   }
   //void distFrmCtr(Thing other){
