@@ -61,6 +61,11 @@ class Ball extends Thing implements Moveable, Collideable {
      if(this.y-15 <= Brick.y+25&& this.y-15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
        Yspeed *= -1;
     }
+    if(this.y+15 <= Brick.y+25&& this.y+15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
+      Yspeed *= -1;
+    }
+    
+    
     }
   }
   //void distFrmCtr(Thing other){
