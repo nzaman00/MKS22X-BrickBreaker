@@ -32,10 +32,10 @@ void setup() {
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
     a = new Bricks(0, 50);
-    c = new Bricks(350, 50);
+    c = new Bricks(300, 50);
     d = new Bricks(200, 60);
-    e = new Bricks(260, 50);
-    f = new Bricks(130, 60);
+    e = new Bricks(400, 50);
+    f = new Bricks(500, 60);
     p = new Platform();
     b = new Ball();
     thingsToDisplay.add(a);
