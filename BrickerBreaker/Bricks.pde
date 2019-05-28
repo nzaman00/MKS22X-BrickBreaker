@@ -11,7 +11,7 @@ class Bricks extends Thing{
  }
  void display(){
   fill(175, 100, 220);
-  noStroke();
+  stroke(0);
   rect(x, y, w, h); 
  }
 }
