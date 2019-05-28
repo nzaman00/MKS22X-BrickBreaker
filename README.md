@@ -11,3 +11,5 @@ Fixed ball class to bounce when hit diagonally by the platform, but it does not 
 Fixed the ball class so that the Xspeed of the ball changes depending on where the ball hits the platform. The closer to the middle, the steadier it moves.
 ## 5/27:
 Made brick class constructor, but it does not collide yet. I changed the background temporarily to white so it's easier to see the bricks while I test everything
+## 5/28:
+Got the ball to bounce off a brick if hit from the bottom, from the top, or from the sides directly, but still have to get it to collide diagonally as well. Got the bricks to all load as different colors
