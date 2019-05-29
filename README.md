@@ -13,3 +13,5 @@ Fixed the ball class so that the Xspeed of the ball changes depending on where t
 Made brick class constructor, but it does not collide yet. I changed the background temporarily to white so it's easier to see the bricks while I test everything
 ## 5/28:
 Got the ball to bounce off a brick if hit from the bottom, from the top, or from the sides directly, but still have to get it to collide diagonally as well. Got the bricks to all load as different colors
+## 5/29: 
+Attempted to fix the bug with the ball get steadier and wilder, did not work out well. Also made it possible for the ball to hit the Bricks diagonally, there are a few bugs, but they shouldn't matter once the bricks ca disappear
