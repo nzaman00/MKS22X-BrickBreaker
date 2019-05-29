@@ -30,7 +30,7 @@ class Ball extends Thing implements Moveable, Collideable {
   dealWCollision(c);
   dealWCollision(d);
   dealWCollision(e);
-  dealWCollision(f);
+dealWCollision(f);
  // distFrmCtr(p);
   }
   void dealWCollision(Thing other){
@@ -39,7 +39,7 @@ class Ball extends Thing implements Moveable, Collideable {
       if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+15 >= plat.y && this.y+15 <= plat.y+15){
         Yspeed *= -1;
         //fix this!!!
-        if(this.x == plat.x+75 || this.x+50 == plat.x+75 || this.x-50 == plat.x+75){
+        if(this.x == plat.x+75 || this.x+50 >= plat.x+75 || this.x-50 <= plat.x+75){
          Xspeed *= .5;
          println("steadied");
        }
@@ -48,7 +48,7 @@ class Ball extends Thing implements Moveable, Collideable {
       if( this.y+15 >= plat.y && this.y+15 <= plat.y+15 && this.x+15>=plat.x&& this.x-15<= plat.x+plat.wd){
        y= y-5;
        Yspeed *= -1;
-       if(this.x+15==plat.x || this.x-15 ==plat.x){
+       if(this.x+15>=plat.x || this.x-15 <=plat.x){
         Xspeed *= 1.5; 
         println("wild");
        }
@@ -67,10 +67,9 @@ class Ball extends Thing implements Moveable, Collideable {
     if(this.y >= Brick.y && this.y <= Brick.y +25 && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){
      Yspeed *= -1;
      Xspeed *= -1;
-    }
+}
     
-    
-    }
+  }
   }
   //void distFrmCtr(Thing other){
     
