@@ -39,10 +39,12 @@ dealWCollision(f);
       if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+15 >= plat.y && this.y+15 <= plat.y+15){
         Yspeed *= -1;
         //fix this!!!
-        if(this.x == plat.x+75 || this.x+50 >= plat.x+75 || this.x-50 <= plat.x+75){
+        if((this.x == plat.x+75) || (this.x+50 >= plat.x+25 && this.x-50 <= plat.x+25)){
          Xspeed *= .5;
          println("steadied");
-       }
+       }else{
+       Xspeed *= 1.25;
+       println("wild");}
         println("Collision");
       }else{
       if( this.y+15 >= plat.y && this.y+15 <= plat.y+15 && this.x+15>=plat.x&& this.x-15<= plat.x+plat.wd){
@@ -50,7 +52,7 @@ dealWCollision(f);
        Yspeed *= -1;
        if(this.x+15>=plat.x || this.x-15 <=plat.x){
         Xspeed *= 1.5; 
-        println("wild");
+        println("WILD");
        }
        println("bounce");
       }
