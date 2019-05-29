@@ -65,14 +65,19 @@ dealWCollision(f);
     }
     if(this.y+15 <= Brick.y+25&& this.y+15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
       Yspeed *= -1;
+      }
+      if(this.y >= Brick.y && this.y <= Brick.y +25 && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){
+       Yspeed *= -1;
+       //Xspeed *= -1;
     }
-    if(this.y >= Brick.y && this.y <= Brick.y +25 && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){
-     Yspeed *= -1;
-     Xspeed *= -1;
-}
-    
-  }
-  }
+    if( this.y+15 >= Brick.y && this.y+15 <= Brick.y+15 && this.x+15>=Brick.x&& this.x-15<= Brick.x+Brick.w){
+       y= y-5;
+       Yspeed *= -1;
+       Xspeed *= -1;
+    }
+      
+    }
+    }
   //void distFrmCtr(Thing other){
     
    // if(other instanceof Platform){
