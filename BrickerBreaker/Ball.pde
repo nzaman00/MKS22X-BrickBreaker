@@ -60,31 +60,43 @@ dealWCollision(f);
     }
     if(other instanceof Bricks){
      Bricks Brick = (Bricks) other;
-     if(this.y-15 <= Brick.y+25&& this.y-15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
+     if(Brick != null && this.y-15 <= Brick.y+25&& this.y-15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
        Yspeed *= -1;
        if(Brick.count > 0){
          Brick.count--;
        }
+       else{
+         Brick = null;
+       }
     }
-    if(this.y+15 <= Brick.y+25&& this.y+15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
+    if(Brick != null && this.y+15 <= Brick.y+25&& this.y+15 >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +50){
       Yspeed *= -1;
       if(Brick.count > 0){
          Brick.count--;
        }
+       else{
+         Brick = null;
+       }
       }
-      if(this.y >= Brick.y && this.y <= Brick.y +25 && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){
+      if(Brick != null &&this.y >= Brick.y && this.y <= Brick.y +25 && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){
        Yspeed *= -1;
        //Xspeed *= -1;
        if(Brick.count > 0){
          Brick.count--;
        }
+       else{
+         Brick = null;
+       }
     }
-    if( this.y+15 >= Brick.y && this.y+15 <= Brick.y+15 && this.x+15>=Brick.x&& this.x-15<= Brick.x+Brick.w){
+    if( Brick != null && this.y+15 >= Brick.y && this.y+15 <= Brick.y+15 && this.x+15>=Brick.x&& this.x-15<= Brick.x+Brick.w){
        y= y-5;
        Yspeed *= -1;
        Xspeed *= -1;
        if(Brick.count > 0){
          Brick.count--;
+       }
+       else{
+         Brick = null;
        }
     }
       
