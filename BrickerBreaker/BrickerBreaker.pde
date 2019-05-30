@@ -18,6 +18,7 @@ abstract class Thing implements Displayable{
 //platform
 ArrayList<Displayable> thingsToDisplay;
 ArrayList<Moveable> thingsToMove;
+ArrayList<Bricks> bricksToDisplay;
  Ball b;
  Platform p;
  Bricks a;
@@ -31,18 +32,24 @@ void setup() {
 
   thingsToDisplay = new ArrayList<Displayable>();
   thingsToMove = new ArrayList<Moveable>();
-    a = new Bricks(0, 50);
+  bricksToDisplay = new ArrayList<Bricks>();
+  bricksToDisplay.add(new Bricks(0, 50));
+  bricksToDisplay.add(new Bricks(300, 50));
+  bricksToDisplay.add(new Bricks(200, 50));
+  bricksToDisplay.add(new Bricks(400, 50));
+  bricksToDisplay.add(new Bricks(500, 50));
+   /* a = new Bricks(0, 50);
     c = new Bricks(300, 50);
     d = new Bricks(200, 60);
     e = new Bricks(400, 50);
-    f = new Bricks(500, 60);
+    f = new Bricks(500, 60);*/
     p = new Platform();
     b = new Ball();
-    thingsToDisplay.add(a);
+    /*thingsToDisplay.add(a);
     thingsToDisplay.add(c);
     thingsToDisplay.add(d);
     thingsToDisplay.add(e);
-    thingsToDisplay.add(f);
+    thingsToDisplay.add(f);*/
     thingsToDisplay.add(p);
     thingsToDisplay.add(b);
     thingsToMove.add(b);
@@ -56,6 +63,9 @@ void draw() {
   }
   for (Moveable thing : thingsToMove) {
     thing.move();
+  }
+  for(Bricks thing : bricksToDisplay) {
+     thing.display(); 
   }
   textSize(32);
   text(str(b.y), 0,40);
