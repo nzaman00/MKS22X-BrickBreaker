@@ -36,6 +36,6 @@ class Bricks extends Thing{
   }
   stroke(0);
   rect(x, y, w, h); 
-  println(count);
+  //println(count);
  }
 }
