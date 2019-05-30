@@ -21,7 +21,7 @@ class Bricks extends Thing{
   //c1 = random(0,300);
   //c2 = random(0,300);
  // c3 = random(0, 300);
- count = random(0,1);
+ count = (int)random(0,3);
  }
  void display(){
   //fill(c1, c2, c3);
@@ -30,7 +30,8 @@ class Bricks extends Thing{
   }
   if(count >= 1 && count <2){
     fill(255, 204, 0);
-  }else{
+  }
+  if(count == 2.0){
     fill(255,0,0);
   }
   stroke(0);
