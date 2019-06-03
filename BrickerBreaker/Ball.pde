@@ -11,6 +11,7 @@ class Ball extends Thing implements Moveable, Collideable {
   }
   void move(){
     if(y <= 15){
+      y = 15;
    Yspeed *= -1;
     }
    //if(y >= 545){ //remove this part when collide works
@@ -112,8 +113,8 @@ dealWCollision(f);*/
       
      }
      if(dist(this.x, this.y, Brick.x, Brick.y) <= sqrt(2) * this.r){//top left diag
-       y -= 5;
-       x+= 5;
+       y -= this.r;
+       x+= this.r;
        Xspeed *= -1;
        Yspeed *= -1;
        if(Brick.count > 0){
@@ -127,7 +128,7 @@ dealWCollision(f);*/
      }
      if(dist(this.x,this.y, Brick.x, Brick.y+Brick.h) <= sqrt(2) * this.r){//bottom left diag
        x += this.r;
-       y -= 5;
+       y += this.r;
        Xspeed *= -1;
        Yspeed *= -1;
        if(Brick.count > 0){
@@ -136,6 +137,31 @@ dealWCollision(f);*/
        else{
          bricksToDisplay.remove(Brick);
        } 
+       
+     }
+     if(dist(this.x,this.y,Brick.x+Brick.w,Brick.y)<= sqrt(2)*this.r){//top right
+       x -= this.r;
+       y -= this.r;
+       Xspeed *= -1;
+       Yspeed *= -1;
+       if(Brick.count > 0){
+         Brick.count--;
+       }
+       else{
+         bricksToDisplay.remove(Brick);
+       }   
+     }
+     if(dist(this.x,this.y,Brick.x+Brick.w,Brick.y+Brick.h) <= sqrt(2)*this.r){//bottom right
+       x-= this.r;
+       y+= this.r;
+       Xspeed *= -1;
+       Yspeed *= -1;
+       if(Brick.count > 0){
+         Brick.count--;
+       }
+       else{
+         bricksToDisplay.remove(Brick);
+       }   
        
      }
      
