@@ -2,7 +2,7 @@
 ## Project Description:
 This project is a remade version of the famous Brick Breaker game. Using the platform, bounce the ball to hit all the bricks without letting the ball fall off the screen.
 ## Directions:
-You only need to use the mouse to play the game. Use the mouse to control the platform, but you can only move the mouse left to right. You win if you can clear all the bricks, you lose if the ball drops off the screen.
+You only need to use the mouse to play the game. Use the mouse to control the platform, but you can only move the mouse left to right. You win if you can clear all the bricks, you lose if the ball drops off the screen. If you click your mouse you automatically win.
 ## Development Log:
 ### 5/20: 
 Made the platform class, got it to move properly. The platform class moves along with the mouse, but if it reaches the walls, it does not move further.
@@ -24,3 +24,5 @@ Attempted to fix the bug with the ball get steadier and wilder, did not work out
 Tried to fix the bug where the ball goes through the bricks diagonally, did not work out well, but I also got the bricks to be in an array, so making them disappear finally works.
 ### 5/31:
 Started making new algorithm with the help of Mr K to try fixing the bug, the top and bottom works well. 
+### 6/3:
+Finished the side collisions of the brick using the new algorithm and also finished the diag cases, they look a little clunky, but the bugs are fixed. I made cheat codes to help me present and I rearranged the way the bricks spawn. I also added messages depending on if you won the game or not
