@@ -38,6 +38,19 @@ void setup() {
   bricksToDisplay.add(new Bricks(200, 50));
   bricksToDisplay.add(new Bricks(400, 50));
   bricksToDisplay.add(new Bricks(500, 50));
+  bricksToDisplay.add(new Bricks(100, 50));
+  bricksToDisplay.add(new Bricks(50, 50));
+  bricksToDisplay.add(new Bricks(150, 50));
+  bricksToDisplay.add(new Bricks(250, 50));
+  bricksToDisplay.add(new Bricks(350, 50));
+  bricksToDisplay.add(new Bricks(450, 50));
+  bricksToDisplay.add(new Bricks(550, 50));
+  bricksToDisplay.add(new Bricks(0, 75));
+  bricksToDisplay.add(new Bricks(100, 75));
+  bricksToDisplay.add(new Bricks(200, 75));
+  bricksToDisplay.add(new Bricks(300, 75));
+  bricksToDisplay.add(new Bricks(400, 75));
+  bricksToDisplay.add(new Bricks(500, 75));
    /* a = new Bricks(0, 50);
     c = new Bricks(300, 50);
     d = new Bricks(200, 60);
@@ -67,7 +80,20 @@ void draw() {
   for(Bricks thing : bricksToDisplay) {
      thing.display(); 
   }
+  if(bricksToDisplay.size() == 0){
   textSize(32);
-  text(str(b.y), 0,40);
+  text("You Win!", 0, 40);
   fill(255);
+  }
+  if(b.y >= 600){
+   textSize(32);
+   text("Game Over!", 0, 40);
+  }
+}
+void mouseClicked(){
+ int len = bricksToDisplay.size();
+ while(len >0){
+  bricksToDisplay.remove(0);
+  len--;
+ }
 }
