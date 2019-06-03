@@ -66,62 +66,82 @@ dealWCollision(f);*/
     }
     if(other instanceof Bricks){
      Bricks Brick = (Bricks) other;
-     if(  this.y-this.r <= Brick.y+Brick.h&& this.y-this.r >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +Brick.w){//from bottom
-       y+= 10;
+     if(this.x>= Brick.x && this.x <= Brick.x+ Brick.w){//top and bottom
+      if (this.y+this.r >= Brick.y && this.y < Brick.y + Brick.h){
+       y -= 5;
        Yspeed *= -1;
        if(Brick.count > 0){
-         Brick.count--;
-       }
-       else{
-         bricksToDisplay.remove(Brick);
-       }
-    }
-    if( this.y+this.r <= Brick.y+Brick.h&& this.y+this.r >= Brick.y && this.x >= Brick.x && this.x <= Brick.x +Brick.w){//top
-      Yspeed *= -1;
-      if(Brick.count > 0){
          Brick.count--;
        }
        else{
          bricksToDisplay.remove(Brick);
        }
       }
-      if(this.y >= Brick.y && this.y <= Brick.y +Brick.h && (this.x+25 == Brick.x || this.x-25 == Brick.x+50)){//side
-      x += 10;
+      if(this.y-this.r <= Brick.y+Brick.h && this.y> Brick.y){
+       y +=5;
        Yspeed *= -1;
+       if(Brick.count > 0){
+         Brick.count--;
+       }
+       else{
+         bricksToDisplay.remove(Brick);
+       }
+      }
+     }
+     if(this.y>= Brick.y && this.y <= Brick.y+ Brick.h){//left and right
+      if(this.x +r >= Brick.x && this.x < Brick.x+Brick.w){//from the left
+        x -= 5;
+        Xspeed *= -1;
+        if(Brick.count > 0){
+         Brick.count--;
+       }
+       else{
+         bricksToDisplay.remove(Brick);
+       }
+      }
+      if(this.x-r <= Brick.x+Brick.h && this.x > Brick.x){//from the right
+        x += 5;
+        Xspeed *= -1;
+        if(Brick.count > 0){
+         Brick.count--;
+       }
+       else{
+         bricksToDisplay.remove(Brick);
+       } 
+      }
+      
+     }
+     if(dist(this.x, this.y, Brick.x, Brick.y) <= sqrt(2) * this.r){//top left diag
+       y -= 5;
+       x+= 5;
        Xspeed *= -1;
-       if(Brick.count > 0){
-         Brick.count--;
-       }
-       else{
-         bricksToDisplay.remove(Brick);
-       }
-    }
-    if(  this.y - this.r <= Brick.y+Brick.h&&    this.y+this.r >= Brick.y /*&& this.y+this.r <= Brick.y+Brick.h*/ && this.x+this.r>=Brick.x&& this.x-15<= Brick.x+Brick.w){
-       y= y-5;
        Yspeed *= -1;
-       //Xspeed *= -1;
        if(Brick.count > 0){
          Brick.count--;
        }
        else{
          bricksToDisplay.remove(Brick);
+       } 
+       
+       
+     }
+     if(dist(this.x,this.y, Brick.x, Brick.y+Brick.h) <= sqrt(2) * this.r){//bottom left diag
+       x += this.r;
+       y -= 5;
+       Xspeed *= -1;
+       Yspeed *= -1;
+       if(Brick.count > 0){
+         Brick.count--;
        }
-    }
+       else{
+         bricksToDisplay.remove(Brick);
+       } 
+       
+     }
+     
+ 
       
     }
     }
-  //void distFrmCtr(Thing other){
-    
-   // if(other instanceof Platform){
-     // Platform plat = (Platform) other;
-     // if(this.x == plat.x+75){
-       // Xspeed = 0;
-      //}
-     // if(plat.x+75
-      
-   // }
-    
-    
- // }
   
 }
