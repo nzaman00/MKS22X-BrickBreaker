@@ -45,6 +45,15 @@ dealWCollision(f);*/
       Platform plat = (Platform) other;
       if(plat.x<= this.x && plat.x+ plat.wd >= this.x && this.y+15 >= plat.y && this.y+15 <= plat.y+15){
         Yspeed *= -1;
+        if(dist(this.x,this.y,plat.x+75,plat.y) <= 25){
+         Xspeed *= .8; 
+         
+        }else{
+        if(dist(this.x,this.y,plat.x+75,plat.y) >= 50){
+         Xspeed *= 1.1; 
+         
+        }
+        }
         //fix this!!!
         /*if((this.x == plat.x+75) || (this.x+50 >= plat.x+25 && this.x-50 <= plat.x+25)){
          Xspeed *= .5;
@@ -52,16 +61,16 @@ dealWCollision(f);*/
        }else{
        Xspeed *= 1.25;
        println("wild");}*/
-        println("Collision");
       }else{
       if( this.y+this.r >= plat.y && this.y+this.r <= plat.y+plat.ht && this.x+this.r>=plat.x&& this.x-this.r<= plat.x+plat.wd){
        y= y-5;
        Yspeed *= -1;
+       Xspeed *= -1.25;
        /*if(this.x+15>=plat.x || this.x-15 <=plat.x){
         Xspeed *= 1.5; 
         println("WILD");
        }*/
-       println("bounce");
+      // println("bounce");
       }
       }
     }
