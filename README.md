@@ -25,4 +25,4 @@ Tried to fix the bug where the ball goes through the bricks diagonally, did not 
 ### 5/31:
 Started making new algorithm with the help of Mr K to try fixing the bug, the top and bottom works well. 
 ### 6/3:
-Finished the side collisions of the brick using the new algorithm and also finished the diag cases, they look a little clunky, but the bugs are fixed. I made cheat codes to help me present and I rearranged the way the bricks spawn. I also added messages depending on if you won the game or not
+Finished the side collisions of the brick using the new algorithm and also finished the diag cases, they look a little clunky, but the bugs are fixed. I made cheat codes to help me present and I rearranged the way the bricks spawn. I also added messages depending on if you won the game or not. Finally fixed the part where the ball's xspeed changes depending on where the ball is hit.
