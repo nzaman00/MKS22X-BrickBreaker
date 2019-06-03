@@ -1,4 +1,8 @@
 # MKS22X-BrickBreaker
+## Project Description:
+This project is a remade version of the famous Brick Breaker game. Using the platform, bounce the ball to hit all the bricks without letting the ball fall off the screen.
+## Directions:
+You only need to use the mouse to play the game. Use the mouse to control the platform, but you can only move the mouse left to right. You win if you can clear all the bricks, you lose if the ball drops off the screen.
 ## 5/20: 
 Made the platform class, got it to move properly. The platform class moves along with the mouse, but if it reaches the walls, it does not move further.
 ## 5/21:
@@ -15,3 +19,7 @@ Made brick class constructor, but it does not collide yet. I changed the backgro
 Got the ball to bounce off a brick if hit from the bottom, from the top, or from the sides directly, but still have to get it to collide diagonally as well. Got the bricks to all load as different colors
 ## 5/29: 
 Attempted to fix the bug with the ball get steadier and wilder, did not work out well. Also made it possible for the ball to hit the Bricks diagonally, there are a few bugs, but they shouldn't matter once the bricks ca disappear
+## 5/30:
+Tried to fix the bug where the ball goes through the bricks diagonally, did not work out well, but I also got the bricks to be in an array, so making them disappear finally works.
+## 5/31:
+Started making new algorithm with the help of Mr K to try fixing the bug, the top and bottom works well. 
